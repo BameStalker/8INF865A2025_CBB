@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background ){
-                    GreetingText("HAPPY BIRTHDAY BAME")
+                    GreetingText("Hello")
                 }
 
             }
