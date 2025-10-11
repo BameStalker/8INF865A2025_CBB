@@ -23,7 +23,6 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background ){
-                    GreetingText("Hello")
                 }
 
             }
@@ -31,12 +30,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 @Composable
-fun GreetingText(message: String, modifier: Modifier = Modifier) {
+fun GreetingText(message: String,from: String, modifier: Modifier = Modifier) {
     Text(
         text = message,
         modifier = modifier,
         fontSize = 80.sp,
-        lineHeight = 110.sp
+        lineHeight = 100.sp
+    )
+    Text(
+        text = from,
+        fontSize = 36.sp
     )
 }
 
@@ -44,6 +47,6 @@ fun GreetingText(message: String, modifier: Modifier = Modifier) {
 @Composable
 fun BirthdayCardPreview() {
     HappyBirthdayTheme {
-        GreetingText(message = "HAPPY BIRTHDAY BAME")
+        GreetingText(message = "HAPPY BIRTHDAY BAME", from = "From Bame")
     }
 }
