@@ -22,6 +22,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
+import androidx.compose.foundation.Image
+import com.example.happybirthday.R.drawable
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,7 +68,7 @@ fun GreetingText(message: String,from: String, modifier: Modifier = Modifier) {
 }
 @Composable
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
-    val image = painterResource(R.drawable.androidparty)
+    val image = painterResource(drawable.androidparty)
     Image(
         pinter = image,
         contentDescription = null,
