@@ -23,7 +23,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.happybirthday.R.drawable
 import com.example.happybirthday.ui.theme.HappyBirthdayTheme
 
 class MainActivity : ComponentActivity() {
@@ -36,8 +35,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background )
                 { GreetingImage(
-                    message = "HAPPY BIRTHDAY BRO!",
-                    from = "From Bame"
+                    message = getString(R.string.happy_birthday_text),
+                    from = getString(R.string.signature_text),
+                    modifier = Modifier.padding(8.dp)
                     )
                 }
             }
@@ -49,6 +49,8 @@ fun GreetingText(message: String,from: String, modifier: Modifier = Modifier) {
             Column(
                 verticalArrangement = Arrangement.Center,
                 modifier = modifier
+                    .fillMaxSize()
+                    .padding(8.dp)
             ) {
                 Text(
                     text = message,
@@ -68,7 +70,6 @@ fun GreetingText(message: String,from: String, modifier: Modifier = Modifier) {
 }
 @Composable
 fun GreetingImage(message: String, from: String, modifier: Modifier = Modifier){
-    val image = painterResource(R.drawable.androidparty)
     Box(modifier) {
         Image(
             painter = painterResource(id = R.drawable.androidparty),
